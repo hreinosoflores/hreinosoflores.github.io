@@ -1,15 +1,27 @@
 <script setup>
+import { ref } from 'vue'
+import ModalImagen from './ModalImagen.vue'
 defineProps({ project: { type: Object, required: true } })
+const modalAbierto = ref(false)
 </script>
 
 <template>
   <article class="card">
+
+    <button v-if="project.image" type="button" class="shot-btn" :aria-label="`Ampliar captura de ${project.title}`"
+      @click="modalAbierto = true">
+      <img :src="project.image" :alt="`Captura de ${project.title}`" class="shot" />
+    </button>
+
     <header>
-      <img v-if="project.image" :src="project.image" :alt="`Captura de ${project.title}`" class="shot" />
       <h3>{{ project.title }}</h3>
       <div class="links">
         <a :href="project.repo" target="_blank" rel="noopener">Código</a>
-        <a v-if="project.demo" :href="project.demo" target="_blank" rel="noopener">Demo</a>
+
+        <a v-for="demo in project.demos" :key="demo.link" :href="demo.link" target="_blank" rel="noopener">{{ demo.text
+          }}</a>
+
+        <!-- <a v-if="project.demo" :href="project.demo" target="_blank" rel="noopener">Demo</a> -->
       </div>
     </header>
 
@@ -28,6 +40,9 @@ defineProps({ project: { type: Object, required: true } })
       <dt>Resultado</dt>
       <dd>{{ project.result }}</dd>
     </dl>
+
+    <ModalImagen v-if="project.image" v-model="modalAbierto" :src="project.image"
+      :alt="`Captura de ${project.title}`" />
   </article>
 </template>
 
@@ -93,13 +108,29 @@ dd {
   background: var(--chip);
 }
 
+/* Imagen del card (tamaño fijo, no cambia) */
+.shot-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1rem;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+}
+
 .shot {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top;
   border-radius: 8px;
   border: 1px solid var(--border);
-  margin-bottom: 1rem;
+  transition: opacity .15s;
+}
+
+.shot-btn:hover .shot {
+  opacity: .85;
 }
 </style>

@@ -2,7 +2,16 @@ export const projects = [
   {
     title: 'InfoChampions',
     repo: 'https://github.com/hreinosoflores/infochampions',
-    demo: 'https://www.youtube.com/watch?v=0-0UXy-VIx8',
+    demos: [
+      {
+        text: 'Demo Noticias',
+        link: 'https://www.youtube.com/watch?v=0-0UXy-VIx8'
+      },
+      {
+        text: 'Demo Resultados',
+        link: 'https://www.youtube.com/watch?v=T_6PylNcjuc'
+      }
+    ],
     image: '/img/infochampions.png',
     problem:
       'Las noticias y los resultados de la Champions League por temporada necesitan un sitio centralizado, con contenido que solo editores autorizados puedan actualizar.',
@@ -15,7 +24,12 @@ export const projects = [
   {
     title: 'CLVPS · Cardless Virtual Payment System',
     repo: 'https://github.com/hreinosoflores/clvps',
-    demo: 'https://www.youtube.com/watch?v=KCAYq2N45wE',
+    demos: [
+      {
+        text: 'Demo',
+        link: 'https://www.youtube.com/watch?v=KCAYq2N45wE'
+      }
+    ],
     image: '/img/clvps.png',
     problem:
       'Comprar en línea sin depender de una tarjeta: compradores y negocios necesitan una cuenta de dinero electrónico para recargar, pagar y cobrar.',
@@ -28,7 +42,12 @@ export const projects = [
   {
     title: 'Florei Import',
     repo: 'https://github.com/hreinosoflores/florei',
-    demo: 'https://www.youtube.com/watch?v=9vI_ORDu-UQ',
+    demos: [
+      {
+        text: 'Demo',
+        link: 'https://www.youtube.com/watch?v=9vI_ORDu-UQ'
+      }
+    ],
     image: '/img/florei.png',
     problem:
       'Una distribuidora y comercial de luminarias LED necesitaba gestionar su catálogo de productos y tenerlo disponible tanto en web como en móvil.',
