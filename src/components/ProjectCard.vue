@@ -18,27 +18,19 @@ const modalAbierto = ref(false)
       <div class="links">
         <a :href="project.repo" target="_blank" rel="noopener">Código</a>
 
-        <a v-for="demo in project.demos" :key="demo.link" :href="demo.link" target="_blank" rel="noopener">{{ demo.text
+        <a v-if="project.demos && project.demos.length > 0" v-for="demo in project.demos" :key="demo.link"
+          :href="demo.link" target="_blank" rel="noopener">{{ demo.text
           }}</a>
-
-        <!-- <a v-if="project.demo" :href="project.demo" target="_blank" rel="noopener">Demo</a> -->
       </div>
     </header>
 
     <dl>
-      <dt>Problema</dt>
-      <dd>{{ project.problem }}</dd>
-
-      <dt>Solución</dt>
-      <dd>{{ project.solution }}</dd>
-
-      <dt>Stack</dt>
+      <dt>¿De qué trata el proyecto?</dt>
+      <dd>{{ project.description }}</dd>
+      <dt>Stack Empleado</dt>
       <dd class="chips">
         <span v-for="s in project.stack" :key="s" class="chip">{{ s }}</span>
       </dd>
-
-      <dt>Resultado</dt>
-      <dd>{{ project.result }}</dd>
     </dl>
 
     <ModalImagen v-if="project.image" v-model="modalAbierto" :src="project.image"
@@ -95,7 +87,7 @@ dd {
   line-height: 1.55;
 }
 
-.chips {
+/* .chips {
   display: flex;
   flex-wrap: wrap;
   gap: .4rem;
@@ -106,7 +98,7 @@ dd {
   padding: .2rem .6rem;
   border-radius: 999px;
   background: var(--chip);
-}
+} */
 
 /* Imagen del card (tamaño fijo, no cambia) */
 .shot-btn {

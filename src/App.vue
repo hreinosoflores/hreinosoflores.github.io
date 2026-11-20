@@ -21,14 +21,12 @@ watch(isDark, (dark) => {
 
 <template>
   <header class="hero">
-
     <h1>{{ profile.name }}</h1>
 
+    <p class="role">{{ profile.role }}</p>
+
     <div class="switch-theme">
-
-
       <h5>Cambiar tema</h5>
-
       <button type="button" class="switch" role="switch" :aria-checked="isDark"
         :aria-label="isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'" @click="isDark = !isDark">
         <!-- Sol -->
@@ -44,14 +42,12 @@ watch(isDark, (dark) => {
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-
         <span class="perilla" :class="{ activa: isDark }"></span>
       </button>
     </div>
 
-
-    <p class="role">{{ profile.role }}</p>
     <p>{{ profile.tagline }}</p>
+
     <nav>
       <a href="#proyectos">Proyectos</a>
       <a :href="profile.github" target="_blank" rel="noopener">GitHub</a>
@@ -61,8 +57,16 @@ watch(isDark, (dark) => {
   </header>
 
   <main>
+
+    <section id="tecnologías">
+      <h2>Tecnologías con experiencia</h2>
+      <div class="chips">
+        <span v-for="t in profile.technologies" :key="t" class="chip">{{ t }}</span>
+      </div>
+    </section>
+
     <section id="proyectos">
-      <h2>Proyectos</h2>
+      <h2>Proyectos Independientes</h2>
       <div class="grid">
         <ProjectCard v-for="p in projects" :key="p.title" :project="p" />
       </div>

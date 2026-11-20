@@ -1,5 +1,19 @@
 export const projects = [
   {
+    title: 'CLVPS (CARDLESS VIRTUAL PAYMENT SYSTEM)',
+    repo: 'https://github.com/hreinosoflores/clvps',
+    demos: [
+      {
+        text: 'Demo',
+        link: 'https://www.youtube.com/watch?v=KCAYq2N45wE'
+      }
+    ],
+    image: '/img/clvps.png',
+    description:
+      'Prototipo de sistema de pago digital con cuenta de dinero electrónico para compradores y negocios en línea. Incluye dashboard de usuario comprador/vendedor (perfil, saldo actual, historial de transacciones, métodos de recarga), tienda virtual de prueba (catálogo de videojuegos + carrito de compras en sesión) y vista de confirmación de compra (nro operación, monto, saldo final). Dashboard desarrollado con MySQL, .NET 8.0, Entity Framework y Angular. Tienda virtual desarrollada con Java Spring Boot, Thymeleaf y mock data.',
+    stack: ['MySQL', '.NET 8.0', 'Entity Framework', 'Angular', 'Java 21', 'Spring Boot', 'Thymeleaf']
+  },
+  {
     title: 'InfoChampions',
     repo: 'https://github.com/hreinosoflores/infochampions',
     demos: [
@@ -13,31 +27,8 @@ export const projects = [
       }
     ],
     image: '/img/infochampions.png',
-    problem:
-      'Las noticias y los resultados de la Champions League por temporada necesitan un sitio centralizado, con contenido que solo editores autorizados puedan actualizar.',
-    solution:
-      'API REST con Node/Express y MongoDB. Contraseñas con bcrypt y sesiones con JWT para el acceso de editores. El frontend se divide en dos módulos que consumen la misma API: Noticias (React) y Resultados (Angular).',
-    stack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'bcrypt', 'React', 'Redux', 'Material UI', 'Angular', 'Bootstrap'],
-    result:
-      'Sitio funcional con login de editores, gestión de noticias y resultados por temporada, y dos frontends en tecnologías distintas integrados sobre una sola API.',
-  },
-  {
-    title: 'CLVPS · Cardless Virtual Payment System',
-    repo: 'https://github.com/hreinosoflores/clvps',
-    demos: [
-      {
-        text: 'Demo',
-        link: 'https://www.youtube.com/watch?v=KCAYq2N45wE'
-      }
-    ],
-    image: '/img/clvps.png',
-    problem:
-      'Comprar en línea sin depender de una tarjeta: compradores y negocios necesitan una cuenta de dinero electrónico para recargar, pagar y cobrar.',
-    solution:
-      'Dashboard para comprador y vendedor (perfil, saldo, historial de transacciones, métodos de recarga) con API .NET 8, Entity Framework y MySQL, y cliente Angular. Una tienda virtual de prueba en Spring Boot simula el comercio que cobra con la cuenta.',
-    stack: ['.NET 8', 'Entity Framework', 'MySQL', 'Angular', 'Java 21', 'Spring Boot', 'Thymeleaf'],
-    result:
-      'Flujo de pago completo de punta a punta: recarga de saldo, compra en la tienda y confirmación con número de operación, monto y saldo final, con tres componentes en dos ecosistemas (.NET y Java) funcionando juntos.',
+    description: 'Sitio web de información de la Champions League donde se muestra noticias del torneo y resultados de partidos por temporada, con acceso seguro para editores que deseen actualizar el contenido. Seguridad con contraseñas encriptadas en bcrypt. Manejo de sesiones con JWT. Manejo de bases de datos MongoDB. Servicio REST basado en Node Express JS y Mongoose. Aplicación web Frontend dividida en dos partes: Módulo Noticias desarrollado con React JS, Material UI y Redux, Módulo Resultados desarrollado con Angular, Bootstrap y Angular Material.',
+    stack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'React', 'Material UI', 'Redux', 'Angular', 'Bootstrap', 'Angular Material', 'JWT', 'bcrypt']
   },
   {
     title: 'Florei Import',
@@ -49,12 +40,7 @@ export const projects = [
       }
     ],
     image: '/img/florei.png',
-    problem:
-      'Una distribuidora y comercial de luminarias LED necesitaba gestionar su catálogo de productos y tenerlo disponible tanto en web como en móvil.',
-    solution:
-      'API REST con Spring MVC, JPA/Hibernate y PostgreSQL. Aplicación web en React con Tailwind CSS y app móvil en Flutter, ambas consumiendo la misma API. Las imágenes de producto se gestionan con Cloudinary.',
-    stack: ['Spring MVC', 'JPA/Hibernate', 'PostgreSQL', 'React', 'Tailwind CSS', 'Flutter', 'Cloudinary'],
-    result:
-      'Sistema en tres capas (API, web y móvil) para un negocio real, donde los cambios hechos desde una app se reflejan en la otra.',
+    description: 'Sistema informático de gestión de productos para una distribuidora y comercial de luminarias LED. Manejo de bases de datos PostgreSQL. Backend: Servicio REST basado en Spring MVC Framework y JPA Hibernate. Frontend: Aplicación web desarrollada en React JS y Tailwind CSS que consume datos del API REST. Móvil: Aplicación desarrollada en Flutter que consume datos del API REST, y actualiza la información mostrada en la aplicación web. Manejo de imágenes a través de la plataforma Cloudinary.',
+    stack: ['Spring MVC', 'JPA/Hibernate', 'PostgreSQL', 'React', 'Tailwind CSS', 'Flutter', 'Cloudinary']
   },
 ]

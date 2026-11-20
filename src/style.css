@@ -132,6 +132,20 @@ h2 {
   margin: 2rem 0 1rem;
 }
 
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.chip {
+  font-size: .8rem;
+  padding: .2rem .6rem;
+  border-radius: 999px;
+  background: var(--chip);
+}
+
+
 .grid {
   display: grid;
   gap: 1.25rem;
